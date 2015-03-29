@@ -6,48 +6,29 @@
  
   <!-- implementation of the hosted D3- and TopoJson js-libraries -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
-   
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
   <div id="map"></div>
 
+  <div id="controls">
+    <input class="slider" type="range" min="1346281822" max="1446281822" id="date" step="86400" onchange="updateSliders();" oninput="updateSliders();">
+    <span id="dateText">Date</span>
+    <br/>
+    
+    <span id="timeText">12:00 am</span>
+    <input class="slider" type="range" min="0" max="86400" id="time" onchange="updateSliders();" oninput="updateSliders();">
+    <span id="timeText">11:59 pm</span>
+    <br/>
+
+    <input class="slider" type="range" min="1" max="1440" id="window">
+    <span id="windowText">Input Window</span>
+    <br/>
+
+  </div>
+
   <!-- map creation --> 
-  <script>
-
-  var color = d3.scale.linear()
-    .domain([0, 10])
-    .range(["green", "yellow", "red"]);
-
-  // d3.xml("assets/oahu.svg", "image/svg+xml", function(xml) {
-  //    document.getElementById('map').appendChild(xml.documentElement);
-  // });
-
-  var main_chart_svg = d3.select("#map")
-          .append("svg")
-          .attr({
-              "width":800,
-              "height":500
-          });
-
-  d3.xml("assets/oahu.svg", function(error, documentFragment) {
-          if (error) {console.log(error); return;}
-      
-          var svgNode = documentFragment
-                      .getElementsByTagName("svg")[0];
-      
-          main_chart_svg.node().appendChild(svgNode);
-
-          var innerSVG = main_chart_svg.select("svg");
-      
-      });
- 
-  // d3.select("#map").append("svg").attr("width", 50).attr("height", 50).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
-
-  var data = [1,0,0,0,0,0,0,0,0,0,0,1];
-
-  d3.selectAll('rect').data(data)
-    .enter()
-
-    // .attr('fill', 'red');
- 
-  </script>
+  <script type="text/javascript" src="./js/districts.js"></script>
+  <script type="text/javascript" src="./js/incidents.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
