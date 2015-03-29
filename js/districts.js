@@ -1,15 +1,15 @@
-var METRO = 0,
-    DIAMOND_HEAD = 1,
-    HAWAII_KAI = 2,
-    KAILUA = 3,
+var METRO = 5,
+    DIAMOND_HEAD = 2,
+    HAWAII_KAI = 0,
+    KAILUA = 1,
     KANEOHE = 4,
-    NORTH_SHORE = 5,
-    LEEWARD = 6,
-    EWA = 7,
+    NORTH_SHORE = 11,
+    LEEWARD = 10,
+    EWA = 9,
     MAKAKILO = 8,
-    WAIPAHU = 9,
-    CENTRAL = 10,
-    PEARL_CITY = 11;
+    WAIPAHU = 7,
+    CENTRAL = 3,
+    PEARL_CITY = 6;
 
 var districts = {
 "KANEOHE": KANEOHE,

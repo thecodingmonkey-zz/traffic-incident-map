@@ -16,12 +16,18 @@ d3.xml("../assets/oahu.svg", function(error, documentFragment) {
         updateColors();
     });
 
-function updateColors() {
+function updateColors(data) {
   var color = d3.scale.linear()
     .domain([0, 3, 10])
     .range(["green", "yellow", "red"]);
 
-  var data = [1,0,5,0,8,0,1,0,10,0,0,1];
+//    console.log(data);
+
+  if (!data) {
+    data = [1,0,5,0,8,0,1,0,10,0,0,1];
+  }
+  
+//    console.log(data);
 
   d3.selectAll('path').data(data)
     .attr('fill', function(d) {return color(d);} )
@@ -43,6 +49,12 @@ function updateSliders() {
   var dateTxt = new Date ((date + 10*3600 + parseInt(time)) * 1000);
   console.log(dateTxt.toString() );
   $('#dateText').text(dateTxt.toString() );
+
+  var array = incidents.update({
+    time: date + 10*3600 + parseInt(time)
+  });
+  updateColors(array); 
+
 }
 
 $('.slider').on("oninput", updateSliders);

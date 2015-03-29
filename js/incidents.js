@@ -11,12 +11,10 @@ incidents = {
         return obj;
       })
       .filter(function(x) {
-//        console.log(x);
         return (x.district !== null);
       });
 
       console.log('Data loaded.');
-      // console.log(incident_data);
     });
   },
 
@@ -24,7 +22,7 @@ incidents = {
     if (incident_data === null) return [];
 
     var time = obj.time;
-    var history = 86400;
+    var history = 7200; //86400;
 
     var data = incident_data.filter(function(x) {
       var delta = obj.time - x.time;
@@ -34,8 +32,8 @@ incidents = {
     console.log(data.length);
 
     return data.reduce(function(p, c) {
-      console.log(p);
-      console.log(c);
+      // console.log(p);
+      // console.log(c);
       p[c.district] += 1;
       return p;
     }, [0,0,0,0,0,0,0,0,0,0,0,0] );
