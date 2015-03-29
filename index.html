@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+ 
+<!-- Set a style for our worldshape-data -->
+<body>
+ 
+  <!-- implementation of the hosted D3- and TopoJson js-libraries -->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+   
+  <div id="map"></div>
+
+  <!-- map creation --> 
+  <script>
+
+  var color = d3.scale.linear()
+    .domain([0, 10])
+    .range(["green", "yellow", "red"]);
+
+  console.log(color(1));
+
+  d3.xml("assets/oahu.svg", "image/svg+xml", function(xml) {
+    document.getElementById('map').appendChild(xml.documentElement);
+  });
+ 
+  var data = [1,0,0,0,0,0,0,0,0,0,0,1];
+
+  d3.select('g').selectAll('rect').data(data)
+    .enter()
+    // .attr('fill', 'red');
+ 
+  </script>
+</body>
+</html>
