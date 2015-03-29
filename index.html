@@ -16,16 +16,36 @@
     .domain([0, 10])
     .range(["green", "yellow", "red"]);
 
-  console.log(color(1));
+  // d3.xml("assets/oahu.svg", "image/svg+xml", function(xml) {
+  //    document.getElementById('map').appendChild(xml.documentElement);
+  // });
 
-  d3.xml("assets/oahu.svg", "image/svg+xml", function(xml) {
-    document.getElementById('map').appendChild(xml.documentElement);
-  });
+  var main_chart_svg = d3.select("#map")
+          .append("svg")
+          .attr({
+              "width":800,
+              "height":500
+          });
+
+  d3.xml("assets/oahu.svg", function(error, documentFragment) {
+          if (error) {console.log(error); return;}
+      
+          var svgNode = documentFragment
+                      .getElementsByTagName("svg")[0];
+      
+          main_chart_svg.node().appendChild(svgNode);
+
+          var innerSVG = main_chart_svg.select("svg");
+      
+      });
  
+  // d3.select("#map").append("svg").attr("width", 50).attr("height", 50).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
+
   var data = [1,0,0,0,0,0,0,0,0,0,0,1];
 
-  d3.select('g').selectAll('rect').data(data)
+  d3.selectAll('rect').data(data)
     .enter()
+
     // .attr('fill', 'red');
  
   </script>
