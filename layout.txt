@@ -1,0 +1,16 @@
+Things to put on main page:
+
+- map
+- sliders (date/time, window size, yellow and green thresholds)
+- link to HPD traffic incident page
+- list of incidents?
+- breakdown of incidents per region? (especially metro)
+
+
+title
+explanation of algo
+map: labels
+slider
+legend
+
+credits
