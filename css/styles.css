@@ -4,6 +4,7 @@ body {
 /*  background-image: url('./../assets/subtle_white_mini_waves.png');
   background-repeat: repeat;
 */  background-color: #C2E5FF;
+
 }
 
 #legend {
@@ -24,6 +25,8 @@ body {
 
 .content {
   max-width: 1100px;
+  margin-left: auto;
+margin-right: auto;
 }
 
 h1 {
