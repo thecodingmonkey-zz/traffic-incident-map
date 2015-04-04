@@ -104,7 +104,9 @@ h1, h2, p, #dateText {
 
 @media all and (max-width: 900px) {
   #description {
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   #map {
