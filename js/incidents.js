@@ -2,7 +2,8 @@ incidents = {
   incident_data: null,
 
   load: function() {
-    $.get('./assets/data.json',
+    // $.get('./assets/data.json',
+    $.get('https://data.honolulu.gov/api/views/ix32-iw26/rows.json?accessType=DOWNLOAD',
      function(data) {
       incident_data = data.data.map(function(x) {
         var obj = {};
@@ -17,6 +18,20 @@ incidents = {
       console.log('Data loaded.');
       updateSliders();
       $('.slider').prop('disabled', false);
+
+      $('#date').attr('max', 
+        incident_data.reduce(function(p,c) {
+          return (p > c.time) ? p : c.time;
+        }, 0)
+
+        );
+
+        $('#date').attr('min', 
+        incident_data.reduce(function(p,c) {
+          return (p < c.time) ? p : c.time;
+        }, 999999999999999)
+
+        );
     });
   },
 
@@ -33,7 +48,7 @@ incidents = {
       return (delta > 0 && delta <= history);
     });
 
-    console.log(data.length);
+//    console.log(data.length);
 
     return data.reduce(function(p, c) {
       // console.log(p);
