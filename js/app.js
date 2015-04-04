@@ -10,7 +10,7 @@ var main_chart_svg = d3.select("#map")
 
         });
 
-d3.xml("./../assets/oahu.svg", function(error, documentFragment) {
+d3.xml("./assets/oahu.svg", function(error, documentFragment) {
         if (error) {console.log(error); return;}
     
         var svgNode = documentFragment
