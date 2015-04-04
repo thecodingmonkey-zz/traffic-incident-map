@@ -23,7 +23,7 @@ incidents = {
     if (incident_data === null) return [];
 
     var time = obj.time;
-    var history = obj.window; //86400;
+    var history = obj.window*60; //86400;
 
     // console.log(history);
 
