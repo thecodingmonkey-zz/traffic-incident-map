@@ -19,7 +19,7 @@ incidents = {
   },
 
   update: function(obj) {
-    if (incident_data === null) return [];
+    if (this.incident_data === null) return [];
 
     var time = obj.time;
     var history = 7200; //86400;

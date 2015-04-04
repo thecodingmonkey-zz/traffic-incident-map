@@ -451,4 +451,17 @@
 	c-0.1,0-0.2,0-0.3,0c0,0,0,0-0.1,0c-0.1,0-0.2,0.1-0.3,0.2c0,0-0.1,0.1-0.1,0.1c-0.1,0.1-0.1,0.2-0.2,0.3c0,0-0.1,0.1-0.1,0.1
 	c-0.1,0.2-0.2,0.3-0.2,0.6c-0.1,0.3-0.2,0.6-0.1,0.9c0,0.7,0.5,1.1,1.2,1.3c0.9,0.3,2.3,0.5,3.5,1.3c2.5,1.5,3,0.7,5.1,2.7
 	c0.4,0.4,0.7,0.7,0.9,1c0,0,0,0.1,0.1,0.1c0.2,0.3,0.4,0.5,0.5,0.7c0.4,0.1,0.7,0.2,1.1,0.3C32.3,309.9,34.5,310.8,36.6,311.7z"/>
+<text x="375" y="550" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Metro</text>
+<text x="550" y="600" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Hawaii Kai</text>
+<text x="400" y="650" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Diamond Head</text>
+<text x="500" y="530" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Kailua</text>
+<text x="400" y="400" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Kaneohe</text>
+<text x="150" y="320" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">North Shore</text>
+<text x="70" y="420" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Leeward</text>
+<text x="170" y="580" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Ewa</text>
+<text x="200" y="475" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Waipahu</text>
+<text x="170" y="520" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Makakilo</text>
+<text x="310" y="480" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Pearl City</text>
+<text x="200" y="410" font-family="sans-serif" font-size="1em" font-weight="700" fill="black">Central</text>
+
 </svg>

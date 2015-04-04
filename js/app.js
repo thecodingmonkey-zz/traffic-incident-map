@@ -2,8 +2,12 @@
 var main_chart_svg = d3.select("#map")
         .append("svg")
         .attr({
-            "width":800,
-            "height":500
+            "id": "oahu",
+            "width":600,
+            "height":600,
+            "viewbox":"100 100 700 700",
+            "preserveAspectRatio":"xMidYMid"
+
         });
 
 d3.xml("../assets/oahu.svg", function(error, documentFragment) {
@@ -19,7 +23,7 @@ d3.xml("../assets/oahu.svg", function(error, documentFragment) {
 function updateColors(data) {
   var color = d3.scale.linear()
     .domain([0, 3, 10])
-    .range(["green", "yellow", "red"]);
+    .range(["#282", "yellow", "red"]);
 
 //    console.log(data);
 
@@ -57,4 +61,18 @@ function updateSliders() {
 
 }
 
+updateSliders();
+
 $('.slider').on("oninput", updateSliders);
+
+var aspect = 1,
+    chart = $("#oahu");
+$(window).on("resize", function() {
+    var targetWidth = chart.parent().width();
+    chart.attr("width", targetWidth);
+    chart.attr("height", targetWidth / aspect);
+});
+
+    var targetWidth = chart.parent().width();
+    chart.attr("width", targetWidth);
+    chart.attr("height", targetWidth / aspect);

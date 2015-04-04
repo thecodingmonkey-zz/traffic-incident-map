@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
- 
-<!-- Set a style for our worldshape-data -->
-<body>
-  <h1>Honolulu Traffic Incident Heatmap</h1>
-
-  <p>This infographic visualizes the public data feed provided by <a href="http://www4.honolulu.gov/hpdtraffic/">HPD Traffic Information</a> and plots them into a heatmap of the island of Oahu.  It counts up the number of incidents that happened for the last X minutes (specified by the window slider) from the specified time, and color codes each region based on the number of incidents.</p>
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honolulu Traffic Incidents</title>
+  <link rel="stylesheet" media="all" type="text/css" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- implementation of the hosted D3- and TopoJson js-libraries -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<!-- Set a style for our worldshape-data -->
+<body>
+  <div class="content">
+    <h1>Honolulu Traffic Incident Heatmap</h1>
 
-  <div id="map"></div>
+    <div id="columns" class="clearfix">
 
-  <div id="controls">
-    <input class="slider" type="range" min="1346281822" max="1446281822" id="date" step="86400" onchange="updateSliders();" oninput="updateSliders();">
-    <span id="dateText">Date</span>
-    <br/>
-    
-    <span id="timeText">12:00 am</span>
-    <input class="slider" type="range" min="0" max="86400" step="60" id="time" onchange="updateSliders();" oninput="updateSliders();">
-    <span id="timeText">11:59 pm</span>
-    <br/>
+      <div id="description">
+<!--         <h2>Description</h2>
+ -->        <p>This infographic visualizes the public data feed provided by <a href="http://www4.honolulu.gov/hpdtraffic/">HPD Traffic Information</a> and plots them into a heatmap ofthe island of Oahu.  It counts up the number of incidents that happened for the last X minutes (specified by the window slider) from the specified time, and color codes each region based on the number of incidents.</p>
+      </div>
 
-    <input class="slider" type="range" min="1" max="1440" id="window">
-    <span id="windowText">Input Window</span>
-    <br/>
+      <div id="map"></div>
+
+    </div>
+
+    <div id="controls">
+      <div id="dateText">Date</div><br/>
+
+      <div class="controlSliders">
+        <input class="slider" type="range" min="1346281822" max="1446281822" id="date" step="86400" onchange="updateSliders();" oninput="updateSliders();">
+        <br/>
+        
+        <span id="timeText">12:00 am</span>
+        <input class="slider" type="range" min="0" max="86400" step="60" id="time" onchange="updateSliders();" oninput="updateSliders();">
+        <span id="timeText">11:59 pm</span>
+        <br/>
+
+        <input class="slider" type="range" min="1" max="1440" id="window">
+        <br/>
+        <span id="windowText">Input Window</span>
+        <br/>
+      </div>
+
+    </div>
 
   </div>
-
   <!-- map creation --> 
   <script type="text/javascript" src="./js/districts.js"></script>
   <script type="text/javascript" src="./js/incidents.js"></script>
