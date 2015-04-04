@@ -25,16 +25,18 @@ function updateColors(data) {
     .domain([0, 3, 10])
     .range(["#C3C034", "#F7D510", "#F0972D"]);
 
-//    console.log(data);
-
   if (!data) {
     data = [1,0,5,0,8,0,1,0,10,0,0,1];
   }
   
-//    console.log(data);
-
   d3.selectAll('path').data(data)
     .attr('fill', function(d) {return color(d);} )
+
+  var i=0;
+  for(i=0; i <= 10; i++) {
+    $("#legend .box"+i.toString() )
+      .css('background-color', color(i) );
+  }
 
 }
 
