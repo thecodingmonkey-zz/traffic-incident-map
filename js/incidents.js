@@ -15,14 +15,17 @@ incidents = {
       });
 
       console.log('Data loaded.');
+      updateSliders();
     });
   },
 
   update: function(obj) {
-    if (this.incident_data === null) return [];
+    if (incident_data === null) return [];
 
     var time = obj.time;
-    var history = 7200; //86400;
+    var history = obj.window; //86400;
+
+    // console.log(history);
 
     var data = incident_data.filter(function(x) {
       var delta = obj.time - x.time;

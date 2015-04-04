@@ -23,7 +23,7 @@ d3.xml("../assets/oahu.svg", function(error, documentFragment) {
 function updateColors(data) {
   var color = d3.scale.linear()
     .domain([0, 3, 10])
-    .range(["#282", "yellow", "red"]);
+    .range(["#C3C034", "#F7D510", "#F0972D"]);
 
 //    console.log(data);
 
@@ -51,17 +51,25 @@ function updateSliders() {
   var time = $('#time').val();
 
   var dateTxt = new Date ((date + 10*3600 + parseInt(time)) * 1000);
-  console.log(dateTxt.toString() );
-  $('#dateText').text(dateTxt.toString() );
+//  console.log(dateTxt.toString() );
+  $('#dateText').text(dateTxt.toString().replace('GMT-1000 (HST)', '') );
+
+
+  var windowSize = parseInt($('#window').val() );
+  var wHours = Math.floor(windowSize/60);
+  var wMin = windowSize % 60;
+  $('#windowText').text( wHours.toString() + ':' + ('00' + wMin.toString() ).slice(-2)  );
 
   var array = incidents.update({
-    time: date + 10*3600 + parseInt(time)
+    time: date + 10*3600 + parseInt(time),
+    window: windowSize 
   });
+
   updateColors(array); 
 
 }
 
-updateSliders();
+//updateSliders();
 
 $('.slider').on("oninput", updateSliders);
 

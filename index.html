@@ -37,7 +37,7 @@
         <span id="timeText">11:59 pm</span>
         <br/>
 
-        <input class="slider" type="range" min="1" max="1440" id="window">
+        <input class="slider" onchange="updateSliders();" oninput="updateSliders();" type="range" min="1" max="1440" id="window" value="120">
         <br/>
         <span id="windowText">Input Window</span>
         <br/>

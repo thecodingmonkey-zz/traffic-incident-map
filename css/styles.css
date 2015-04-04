@@ -1,8 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
-  background-image: url('./../assets/subtle_white_mini_waves.png');
+/*  background-image: url('./../assets/subtle_white_mini_waves.png');
   background-repeat: repeat;
+*/  background-color: #C2E5FF;
 }
 
 .content {
@@ -30,11 +31,12 @@ h1, h2, p, #dateText {
 }
 
 #controls {
-  background-color: gray;
+  background-color: #C5E4CA;
+  border: 1px solid black;
 }
 
 #controls #dateText {
-  background-color: black;
+  background-color: #C3C034;
   color: white;
   font-size: 2em;
   text-align: center;
@@ -53,7 +55,7 @@ h1, h2, p, #dateText {
   float: right;
   width: 49%;
   border: 1px solid black;
-  background-color: #8bb;
+  background-color: #C5E4CA;
 }
 
 #map {
