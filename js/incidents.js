@@ -16,6 +16,7 @@ incidents = {
 
       console.log('Data loaded.');
       updateSliders();
+      $('.slider').prop('disabled', false);
     });
   },
 

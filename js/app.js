@@ -74,6 +74,7 @@ function updateSliders() {
 //updateSliders();
 
 $('.slider').on("oninput", updateSliders);
+$('.slider').prop('disabled', true);
 
 var aspect = 1,
     chart = $("#oahu");
