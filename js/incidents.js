@@ -6,7 +6,7 @@ incidents = {
     $.ajax({
       type: 'GET',
       dataType: 'json',
-      url: 'https://data.honolulu.gov/resource/jgj7-smag.json' //'https://data.honolulu.gov/api/views/ix32-iw26/rows.json?accessType=DOWNLOAD',
+      url: 'https://data.honolulu.gov/resource/jgj7-smag.json', //'https://data.honolulu.gov/api/views/ix32-iw26/rows.json?accessType=DOWNLOAD',
       cache: false,
       error: function (xhr, ajaxOptions, thrownError) {
         alert(xhr.responseText);
